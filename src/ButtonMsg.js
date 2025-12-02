@@ -7,7 +7,7 @@ const [imie, ustawImie] = useState("")
 useEffect(()=>{
  let zapisaneImie = localStorage.getItem("imie")
  if(zapisaneImie){
-   ustawImie(zapisaneImie)
+ ustawImie(zapisaneImie)
  }
 }, [])
 
@@ -16,8 +16,8 @@ useEffect(()=>{
 function obsluzKlikniecie() {
   const wpisaneImie = prompt("Podaj swoje imię:")
   if (wpisaneImie === null || wpisaneImie === "") {
-    alert("Błąd podaj swoje imie")
-    return
+  alert("Błąd podaj swoje imie")
+  return
   }
 
   localStorage.setItem("imie", wpisaneImie)
@@ -43,3 +43,4 @@ return(
 )
 
 }
+
