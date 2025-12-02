@@ -5,7 +5,7 @@ import ButtonMsg from "./ButtonMsg"
 import "./styles.css"
 
 
-const gry = [
+const listaGier = [
  ["Minecraft","Gra survivalowa w otwartym świecie."],
  ["Cyberpunk 2077","Gra RPG w klimacie sci-fi."],
  ["The Witcher 3","Gra RPG stworzona przez CD Projekt RED."],
@@ -13,7 +13,7 @@ const gry = [
  ["Fortnite","Popularna gra battle royale."]
 ]
 
-const hasla = [
+const listaHasel = [
  "Fun fact: Creeper powstał przez przypadek!",
  "Pamiętaj robić przerwy podczas grania!",
  "Nigdy nie rage-quituj, oddychaj :)",
@@ -23,15 +23,15 @@ const hasla = [
 function App(){
 
 
-  const [szukaj,setSzukaj] = useState("")
-  const [wyniki,setWyniki] = useState(gry)
-  const [haslo,setHaslo] = useState("")
+  const [wyszukiwane, ustawWyszukiwane] = useState("")
+  const [wyniki, ustawWyniki] = useState(listaGier)
+  const [haslo, ustawHaslo] = useState("")
 
 
 useEffect(()=>{
 
-  setHaslo(
-  hasla[Math.floor(Math.random()*hasla.length)]
+  ustawHaslo(
+  listaHasel[Math.floor(Math.random()*listaHasel.length)]
   )
 
   const r = Math.floor(Math.random()*200)
@@ -44,12 +44,12 @@ useEffect(()=>{
 
 
 useEffect(()=>{
-setWyniki(
- gry.filter(x=> x[0].toLowerCase().includes(
-   szukaj.toLowerCase()
+ustawWyniki(
+ listaGier.filter(x=> x[0].toLowerCase().includes(
+   wyszukiwane.toLowerCase()
  ))
 )
-},[szukaj])
+},[wyszukiwane])
 
 
 
@@ -62,8 +62,8 @@ return(
 
 <input
  placeholder="Szukaj gry..."
- value={szukaj}
- onChange={(e)=>setSzukaj(e.target.value)}
+ value={wyszukiwane}
+ onChange={(e)=>ustawWyszukiwane(e.target.value)}
  />
 
 <p>Liczba wyników: {wyniki.length}</p>
@@ -71,14 +71,14 @@ return(
 <ButtonMsg/>
 
 <div>
- {wyniki.map((g,i)=>(
-   <Card key={i} title={g[0]} desc={g[1]}/>
+ {wyniki.map((g,i)=>(  
+   <Card key={i} nazwa={g[0]} opis={g[1]}/>
  ))}
 </div>
 
 <footer>
  <hr/>
- Projekt wykonany przez Damian Celej ({new Date().getFullYear()})
+ Projekt wykonany przez Damian Celej 
 </footer>
 
 </div>

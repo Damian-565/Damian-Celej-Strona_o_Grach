@@ -2,42 +2,41 @@ import React, {useState, useEffect} from "react"
 
 export default function ButtonMsg(){
 
-const [name, setName] = useState("")
-
+const [imie, ustawImie] = useState("")
 
 useEffect(()=>{
- let x = localStorage.getItem("imie")
- if(x){
-   setName(x)
+ let zapisaneImie = localStorage.getItem("imie")
+ if(zapisaneImie){
+   ustawImie(zapisaneImie)
  }
 }, [])
 
 
 
-function handleClick() {
-  const w = prompt("Podaj swoje imię:")
-  if (w === null || w === "") {
+function obsluzKlikniecie() {
+  const wpisaneImie = prompt("Podaj swoje imię:")
+  if (wpisaneImie === null || wpisaneImie === "") {
     alert("Błąd podaj swoje imie")
     return
   }
 
-  localStorage.setItem("imie", w)
-  setName(w)
+  localStorage.setItem("imie", wpisaneImie)
+  ustawImie(wpisaneImie)
 }
 
 
 
-function reset(){
+function resetuj(){
  localStorage.removeItem("imie")
- setName("")
+ ustawImie("")
 }
 
 return(
 
   <div>
-  {name
-   ? <><p>Cześć, {name}!</p><button onClick={reset}>Zmień nick</button></>
-   : <button onClick={handleClick}>Podaj własny nick</button>
+  {imie
+   ? <><p>Cześć, {imie}!</p><button onClick={resetuj}>Zmień nick</button></>
+   : <button onClick={obsluzKlikniecie}>Podaj własny nick</button>
   }
  </div>
 
