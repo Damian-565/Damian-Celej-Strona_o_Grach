@@ -64,7 +64,7 @@ return(
 <p><b>Hasło dnia:</b> {haslo}</p>
 
 <input
- placeholder="Szukaj gry..."
+ placeholder="Szukaj"
  value={wyszukiwane}
  onChange={(e)=>ustawWyszukiwane(e.target.value)}
  />
