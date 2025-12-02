@@ -1,50 +1,40 @@
 import React, { useState, useEffect } from "react";
 
 export default function ButtonMsg() {
-const [imie, setImie] = useState("");
-const [noweImie, setNoweImie] = useState("");
+  const [imie, setImie] = useState("");
 
   useEffect(() => {
   const zapisaneImie = localStorage.getItem("imie");
   if (zapisaneImie) {
   setImie(zapisaneImie);
-    }
+  }
   }, []);
 
   const zapiszImie = () => {
-    if (noweImie === "") {
-    alert("Podaj swoje imię!");
+    const noweImie = prompt("Podaj swoje imię");
+    if (noweImie === "" || noweImie === null) {
+    alert("Nie podano imienia!");
     return;
     }
     setImie(noweImie);
     localStorage.setItem("imie", noweImie);
-    setNoweImie("");
   };
 
   const wyczyscImie = () => {
   setImie("");
-  localStorage.removeItem("imie");
+    ocalStorage.removeItem("imie");
   };
 
   return (
     <div>
-    {imie !== "" ? (
+      {imie === "" ? (
+      <button onClick={zapiszImie}>Wpisz swoje imię</button>
+      ) : (
       <div>
       <p>Cześć, {imie}!</p>
       <button onClick={wyczyscImie}>Zmień imię</button>
       </div>
-      ) : (
-      <div>
-      <input
-      type="text"
-      value={noweImie}
-      onChange={(e) => setNoweImie(e.target.value)}
-      placeholder="Wpisz swoje imię"
-      />
-      <button onClick={zapiszImie}>Zapisz</button>
-      </div>
       )}
-      </div>
-     );
+    </div>
+  );
 }
-
