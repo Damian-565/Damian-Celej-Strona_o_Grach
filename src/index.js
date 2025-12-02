@@ -9,7 +9,7 @@ const listaGier = [
  ["Minecraft","Gra survivalowa w otwartym świecie."],
  ["Cyberpunk 2077","Gra RPG w klimacie sci-fi."],
  ["The Witcher 3","Gra RPG stworzona przez CD Projekt RED."],
- ["Stardew Valley","Gra o prowadzeniu farmy."],
+ ["CS2","Gra FPS."],
  ["Fortnite","Popularna gra battle royale."]
 ]
 
