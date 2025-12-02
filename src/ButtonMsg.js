@@ -1,40 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react"
 
-export default function ButtonMsg() {
-  const [imie, setImie] = useState("");
+export default function ButtonMsg(){
 
-  useEffect(() => {
-  const zapisaneImie = localStorage.getItem("imie");
-  if (zapisaneImie) {
-  setImie(zapisaneImie);
+const [imie, ustawImie] = useState("")
+
+useEffect(()=>{
+ let zapisaneImie = localStorage.getItem("imie")
+ if(zapisaneImie){
+   ustawImie(zapisaneImie)
+ }
+}, [])
+
+
+
+function obsluzKlikniecie() {
+  const wpisaneImie = prompt("Podaj swoje imię:")
+  if (wpisaneImie === null || wpisaneImie === "") {
+    alert("Błąd podaj swoje imie")
+    return
   }
-  }, []);
 
-  const zapiszImie = () => {
-    if (noweImie.length < 1) {
-      alert("Podaj swoje imię!");
-    return;
-    }
-    setImie(noweImie);
-    localStorage.setItem("imie", noweImie);
-  };
-
-  const wyczyscImie = () => {
-  setImie("");
-    ocalStorage.removeItem("imie");
-  };
-
-  return (
-    <div>
-      {imie === "" ? (
-      <button onClick={zapiszImie}>Wpisz swoje imię</button>
-      ) : (
-      <div>
-      <p>Cześć, {imie}!</p>
-      <button onClick={wyczyscImie}>Zmień imię</button>
-      </div>
-      )}
-    </div>
-  );
+  localStorage.setItem("imie", wpisaneImie)
+  ustawImie(wpisaneImie)
 }
 
+
+
+function resetuj(){
+ localStorage.removeItem("imie")
+ ustawImie("")
+}
+
+return(
+
+  <div>
+  {imie
+   ? <><p>Cześć, {imie}!</p><button onClick={resetuj}>Zmień nick</button></>
+   : <button onClick={obsluzKlikniecie}>Podaj własny nick</button>
+  }
+ </div>
+
+)
+
+}
