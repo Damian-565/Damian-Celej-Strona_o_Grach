@@ -11,9 +11,8 @@ export default function ButtonMsg() {
   }, []);
 
   const zapiszImie = () => {
-    const noweImie = prompt("Podaj swoje imię");
-    if (noweImie === "" || noweImie === null) {
-    alert("Nie podano imienia!");
+    if (noweImie.length < 1) {
+      alert("Podaj swoje imię!");
     return;
     }
     setImie(noweImie);
@@ -38,3 +37,4 @@ export default function ButtonMsg() {
     </div>
   );
 }
+
