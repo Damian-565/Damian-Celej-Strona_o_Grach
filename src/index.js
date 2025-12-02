@@ -8,8 +8,8 @@ import "./styles.css"
 const listaGier = [
  ["Minecraft","Gra survivalowa w otwartym świecie."],
  ["Cyberpunk 2077","Gra RPG w klimacie sci-fi."],
- ["The Witcher 3","Gra RPG stworzona przez CD Projekt RED."],
- ["CS2","Gra FPS."],
+ ["The Witcher 3","Gra RPG stworzona przez polskie studio."],
+ ["CS2","Gra FPS studia Valve."],
  ["Fortnite","Popularna gra battle royale."]
 ]
 
