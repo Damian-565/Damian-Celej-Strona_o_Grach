@@ -34,11 +34,14 @@ useEffect(()=>{
   listaHasel[Math.floor(Math.random()*listaHasel.length)]
   )
 
-  const r = Math.floor(Math.random()*200)
-  const g = Math.floor(Math.random()*200)
-  const b = Math.floor(Math.random()*200)
+ let czerwony = Math.floor(Math.random() * 200)
+ let zielony = Math.floor(Math.random() * 200)
+ let niebieski = Math.floor(Math.random() * 200)
 
-  document.body.style.background = `rgb(${r},${g},${b})`
+let gotowyKolor = "rgb(" + czerwony + "," + zielony + "," + niebieski + ")"
+
+document.body.style.background = gotowyKolor
+
 
 },[])
 
