@@ -7,10 +7,10 @@ import "./styles.css"
 
 const listaGier = [
  ["Minecraft","Gra survivalowa w otwartym świecie."],
- ["Cyberpunk 2077","Gra RPG w klimacie sci-fi."],
- ["The Witcher 3","Gra RPG stworzona przez polskie studio."],
- ["CS2","Gra FPS studia Valve."],
- ["Fortnite","Popularna gra battle royale."]
+ ["Gta 5","Gra Fabularna"],
+ ["league of legends","Gra studia Riot games"],
+ ["CS2","Gra FPS studia Valve"],
+ ["Fortnite","Gra Battle Royale"]
 ]
 
 const listaHasel = [
