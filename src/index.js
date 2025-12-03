@@ -16,7 +16,7 @@ const listaGier = [
 const listaHasel = [
  "Fun fact: Creeper powstał przez przypadek!",
  "Pamiętaj robić przerwy podczas grania!",
- "Nigdy nie rage-quituj, oddychaj :)",
+ "Kontroluj czas poświęcany na granie",
  "Gry rozwijają kreatywność i logiczne myślenie."
 ]
 
